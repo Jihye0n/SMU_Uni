@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Advance 2</title>
+    <style>
+        #menu {
+            margin: 10px;
+            padding: 10px;
+            background-color: aquamarine;
+        }
+        li {
+            /* background-color: white; */
+            list-style-position: inside; /* list-style-position : 마커 위치 설정 [inside (안쪽에 배치) / outside (바깥쪽에 배치) */
+            list-style-type: none; /* list-style-type : 마커 종류 설정 [none (마커 없애는 것)] */ 
+            display: inline; /* 리스트의 데이터들이 옆으로 붙음 */
+            position: relative;
+        }
+        li:hover {
+            color: pink;
+            font-weight: bold;
+            top: -10px; /* - (마이너스) 라서 바깥쪽으로 배치됨 */
+            left: -5px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; /* 마우스를 올리면 밑줄 표시 */
+            color: pink;
+        }
+        a:active, a:visited { /* 마우스로 누르고 있는 상황에서 스타일 적용, 방문하고 나서의 링크 스타일 적용 */
+            color: black;
+        }
+    </style>
+    <style>
+        table, tr, td, th { /* , 가 있어야 모두 포함 / , 가 없으면 테이블 밑에있는 tr, td... 만 포함 (table 포함X) */
+            border-top: 3px solid white; /* 위쪽만 실선 표시 */
+            border-collapse: collapse; /* 테두리 합치기 */
+        }
+        td, th {
+            width: 150px;
+            text-align: center;
+        }
+        th { /* 제목 부분 */
+            background-color: skyblue;
+        }
+        tbody tr:nth-child(even) { /* tbody안에 tr(행)에만 , nth-child(even) : 짝수부분 */
+            background-color: lightgray;
+        }
+        tbody tr:nth-child(odd) { /* tbody안에 tr(행)에만 , nth-child(even) : 홀수부분 */
+            background-color: gray;
+        }
+        tbody tr:hover { /* tbody안 tr(행)에 마우스 올렸을 때 */
+            background: pink;
+
+        }
+    </style>
+    <style>
+        input[type=text] { /* type이 text인 부분만 설정 */
+            border: 2px dotted green;
+            border-radius: 15px; /* 둥글게 표현 */
+            background: skyblue;
+            color: red;
+        }
+        input:focus { /* focus : 입력칸을 눌렸을 때 (hover : 마우스를 올렸을 때) */
+            font-size: larger;
+        }
+    </style>
+    <style> /* 애니메이션 : 여러개 적용 가능 */
+        @keyframes ani { 
+            from {color: red; font-size: 100%;} /* from(0%) : 처음 시작 시간을 뜻함 */
+            /* 50% {color: yellow; font-size: 150%;} // 중간을 뜻함 */ 
+            to {color: green; font-size: 200%;} /* to(100%) : 마지막 끝나는 시간을 뜻함 */
+        }
+        div:hover {
+            animation-name: ani; /* 애니메이션 이름 지정 */
+            animation-duration: 3s; /* 몇초간 지속 */
+            animation-iteration-count: 1; /* 몇번 반복 할지 지정 (infinite : 무한반복) */
+        }
+        section { /* 트랜직션 : 나중에 쓴거 하나만 적용됨 // 애니메이션효과가 1회만 이루어짐 */
+            transition: font-size 3s; /* 폰트사이즈 3초간 서서히 변경 (transition : 전환시간) */
+        }
+        section:hover {
+            font-size: 300%;
+            color: red;
+        }
+    </style>
+    <style>
+        img:hover{
+            width: 330px;
+        }
+        #image {
+            width: 300px; height:200px;
+            border: 1px solid gray;
+            border-radius: 5px; /* 약간 둥글게 표현 */
+            background-size: 300px 200px; 
+            background-image: url("http://loremflickr.com/300/200/dog");
+            background-position: center center; /* 사진 가운대로 지정 */
+            transition: background-size 3s; /* 3초간 서서히 커짐 (커진상태로 유지) */
+        }
+        #image:hover {
+            background-size: 330px 220px; /* background-size : 테두리 사이즈는 그대로 안에 사진만 변경됨 */
+        }
+    </style>
+</head>
+<body>
+    <h2>Image</h2>
+    <img src="http://loremflickr.com/300/200/dog" width="300">
+    <h2>background image</h2>
+    <div id="image">
+
+    </div>
+
+    <div>
+        Animation Text
+    </div>
+    <section>
+        Transition Text
+    </section>
+    <!-- nav#menu>ul>li*5 -->
+    <nav id="menu">
+        <ul>
+            <li>HOME</li>
+            <!-- !시험! 에스프레소를 검색하는 페이지 연결 -->
+            <li><a href="http://search.naver.com/search.naver?query=Espresso">Espresso</a></li> 
+            <li>Cappuccino</li>
+            <li>Cafe Latte</li>
+            <li>F.A.Q</li>
+        </ul>
+    </nav>
+    <hr>
+    <table>
+        <!-- thead>tr>th{title$}*5 -->
+        <thead>
+            <tr>
+                <th>title1</th>
+                <th>title2</th>
+                <th>title3</th>
+                <th>title4</th>
+                <th>title5</th>
+            </tr>
+        </thead>
+        <!-- tbody>(tr>td{In Text}*5)*10 -->
+        <tbody>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+            <tr>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+                <td>In Text</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <form method="get" action="week4_1.html">
+        <!-- <fieldset> <legend> -->
+        ID : <input type="text"><br>
+        PASS : <input type="password"><br>
+        Parm : <input type="text" name="param"><br>
+        <input type="button" value="나는 버튼"><br>
+        <input type="submit" value="제출하기"><br>
+    </form>
+</body>
+</html>
