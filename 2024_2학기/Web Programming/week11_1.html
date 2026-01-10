@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Basic</title>
+    <!-- 리스트 스타일 변경 -->
+    <style>
+        li {
+            display: inline-block;
+            width: 100px; height: 100px;
+        }
+    </style>
+
+
+    <script>
+        // 타이틀 텍스트 클릭 시 
+        function change(obj) {
+            obj.innerHTML = "<h2>Text changed</h2>"
+            t = document.createElement("img"); // 이미지 태그 생성
+            t.src = "http://www.loremflickr.com/300/200";
+            obj.appendChild(t);
+
+            // 서브 타이틀 색상 변경
+            y = document.getElementById("title");
+            y.style.color = "pink";
+        }
+
+
+        // 리스트 스타일 함수
+        // 등록, 전달인자가 없음!
+        mover = function() { // 마우스가 올라갔을 때 동작하는 함수
+            this.style.border = "1px solid red";
+            this.style.color = "green";
+            this.style.fontSize = "110%";
+        };
+        mout = function() { // 마우스가 빠져나갔을 때 동작하는 함수
+            this.style.border = "0px";
+            this.style.color = "black";
+            this.style.fontSize = "100%";
+            this.style.background = "white";
+        };
+        newover = function() {
+            this.style.background = "yellowgreen";
+        };
+    </script>
+
+
+    <!-- 리스트 스크립트 -->
+    <script> // onload
+        window.onload = function () {
+            let lists = document.getElementsByClassName("item");
+            for(i = 0; i < lists.length; i++) { 
+                // onmouseover = mover(); // 함수를 호출 : 이벤트 발생 순간 -> 바로 호출
+                lists[i].onmouseover = mover; // 어떤 객체에 이벤트 함수를 연결 // 중요!! : 이벤트 함수만 등록
+                lists[i].onmouseout = mout; // 동작시키는 타이밍이 아님, 그냥 연결만 해두고 호출이 되면 수행
+                lists[i].addEventListener("mouseover", newover);
+            }
+            // lists[3].onmouseover = newover; // 3번째만 새로운 함수 등록, 전에 등록된 함수는 사라짐
+            lists[3].addEventListener("mouseover", newover); // (이벤트 명, 함수 명) // 두가지 기능(이전 함수, 지금 함수) 다 수행
+
+
+            // list[0]번째 클릭 시 배경색 변경
+            lists[0].addEventListener("click", function() {
+                document.body.style.background = "lightgreen";
+            }); // 함수 정의도 가능
+
+
+            let ev = document.getElementById("div");
+            ev.addEventListener("mouseover", function(){
+                console.log("captuer event");
+            }, true); // mouseover : 이벤트 타입만 넣어줌 [onmouseover X] / true : 캡쳐 이벤트로 등록됨
+        }
+    </script>
+
+
+    <!-- 네이버, 나버튼 스크립트 -->
+    <script>
+        // 버튼 클릭시 f 함수
+        function f(o, e) { // o : this객체 [object] , e : event객체
+            let info = document.getElementById("p");
+            let str = "event ifo : ";
+            // 이벤트 객체
+            str += e.type + "<br>"; // type : 이벤트 명
+            str += e.target + "<br>"; // target : 객체 자체
+            str += e.currentTarget + "<br>"; // currentTarget : 객체 자체
+            str += e.defaultPrevented + "<br>"; // defaultPrevented : 동작 확인 / True : 동작X , false : 정상동작중
+
+            p.innerHTML = str;
+
+            e.target.style.color="red"; // target이 버튼 자체
+        }
+
+
+        // 네이버 클릭 시 체크 함수
+        function check(e) { // 이벤트 함수를 쓰려면 이벤트 객체를 받아야함
+            let res = confirm("정말 이동하시겠습니까?"); // 사용자에게 확인/취소 선택할 수 있는 다이얼로그
+            return res; // 1번째 방법
+
+            /* 2번째 방법
+            if(!res) { // false일 때
+                e.preventDefault(); // 기본 행동을 막는 함수 호출
+            }
+            */
+        }
+    </script>
+
+
+</head>
+<body>
+    <!-- 로그에서 확인 가능 -->
+    <script>
+        function test(e) {
+            console.log(e);
+            console.log("이벤트 발생");
+            e.stopPropagation(); // 이벤트 흐름을 중단 : 1개만 발생 (버블링 안됨)
+        }
+    </script>
+    <div id="div" onmouseover="test(event)">나는 부모
+        <span onmouseover="test(event)">나는 자식</span>
+    </div> <!-- 자식에 마우스를 올렸을 때 : 부모, 자식 같이 바뀜 (버블링) -->
+    <hr>
+
+
+    <!-- 네이버 링크 클릭시 check 함수 호출 ! return 필수 !-->
+    <a href="http://www.naver.com"
+        onclick="return check(event);"
+    >네이버</a> <!-- check() 함수 불러옴 / return false : 기본 행동을 취소 / !!! return을 꼭 써줘야함 !!! -->
+
+
+    <!-- 버튼 클릭시 f 함수 호출 (event 함수) -->
+    <input type="button" value="나버튼"
+        onclick="f(this, event)">
+
+
+    <p id="p">이벤트 정보 표시</p>
+    <hr>
+
+
+    <!-- section>li.item{Item1-$}*5 -->
+    <section>
+        <li class="item">Item1-1</li>
+        <li class="item">Item1-2</li>
+        <li class="item">Item1-3</li>
+        <li class="item">Item1-4</li>
+        <li class="item">Item1-5</li>
+    </section>
+    <hr>
+
+
+    <!-- onmouseover : 마우스 올라 갔을 때 / onmouseout : 마우스가 빠져 나갔을 때 // this : 자기자신을 변경 -->
+    <div onmouseover="this.style.background='green'" 
+        onmouseout="this.style.background='white'" 
+        onclick="change(this)"
+    >타이틀 텍스트</div>
+
+    <!-- onclick : 클릭 했을 때 -->
+    <h4 id=title onclick="this.style.fontSize='120%'" 
+    >서브 타이틀</h4>
+</body>
+</html>
