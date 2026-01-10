@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두 번째 페이지</title>
+</head>
+<body>
+    <h3 id="top"> 하이퍼 링크 만들기 </h3>
+    <a href="#para">paragraph 가기</a> <br> <!-- 같은 페이지 상에서 이동할 떄 id를 사용 (id, #) -->
+    <a href="#pen">펭귄 보기</a> <br>
+    <a href="http://www.naver.com" target="aaa">네이버</a> <br> <!-- 아무 알파벳(aaa) 지정 : aaa라는 영역에 창을 띄움-->
+    <a href="http://www.smu.ac.kr" target="_self">상명대학교</a> <br> <!-- _self : 자기자신의 브라우저에서 창을 띄움 -->
+    <a href="http://www.google.com" target="aaa">구글</a> <br> 
+    <a href="http://daum.net" target="_blank"> <!-- _blank : 완전 새로운 창에서 띄움 -->
+        <img src="http://www.loremflickr.com/100/100/dog"> <!-- 이름이 없으면 링크가 만들어 지지 않는다. [이미지를 넣을 수도 있다.]-->
+    </a> <br> 
+    <hr>
+
+    
+    <h3> table 만들기 </h3>
+    <!-- table>tr*5>td*3 : 다섯줄에 3칸씩 -->
+    <table border=1 width="300"> <!-- border 사용X : 테두리 지정 -->
+    <!-- table > thead / tbody/ tfoot -->
+    <thead> <!-- 제일 위쪽으로 -->
+        <tr> <!-- tr : 행 -->
+            <th>이름</th> <!-- th(헤더) : 굵은 글씨 가운데 정렬 -->
+            <th>국어</th>
+            <th>영어</th>
+        </tr>
+    </thead>
+    <tfoot style="color: red;"> <!-- tfoot : 제일 밑쪽으로 -->
+        <tr>
+            <th>김학생</th>
+            <td>100</td> <!-- td : 데이터 -->
+            <td>98</td>
+        </tr>
+    </tfoot>
+    <tbody style="background-color:aqua;">
+        <tr>
+            <td>이학생</td>
+            <td>97</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>박학생</td>
+            <td>59</td>
+            <td>87</td>
+        </tr>
+        <tr>
+            <td>총점</td>
+            <td>320</td>
+            <td>259</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <!-- rowspan : 세로 방향 병합 -->
+    <!-- colspan : 가로 방향 병합 -->
+    <table border=1 width="500">
+        <thead style="background-color: darkgray; color: red;">
+            <tr>
+                <th>시간</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>9</td>
+                <th>공강</th> 
+                <td rowspan="3"
+                    style="background-color: bisque; color: green;"
+                >네보</td>
+                <th rowspan="3">
+                    <img src="http://www.loremflickr.com/100/100/dog">
+                </th>
+                <td rowspan="3"
+                    style="background-color: azure; color: darkorange;"
+                >디포</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td rowspan="3"
+                    style="background-color: pink; color: blue;"
+                >웹프</td> 
+            </tr>
+            <tr>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <th colspan="3">공강</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td rowspan="3">
+                <img src="http://www.loremflickr.com/100/100/cat">
+                </td>
+                <td rowspan="3"
+                    style="background-color: plum;"
+                >자바</td>
+                <td rowspan="3"
+                    style="background-color: black; color: white;"
+                >AI</td>
+                <td rowspan="3"
+                    style="background-color: blanchedalmond; color: blueviolet;"
+                >전전</td>
+            </tr>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td> 
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+
+    <h3> 리스트 만들기 </h3>
+    <!-- ol>li*3 : ol 안에 3개 -->
+    <ul> <!-- ul : 글머리 기호를 동그라미로 설정 -->
+        <li>아침</li>
+        <li>점심</li>
+        <ul> <!-- 중첩 리스트 -->
+            <li>한식</li>
+            <li>중식</li>
+            <li>일식</li>
+        </ul>
+        <li>저녁</li>
+    </ul>
+    <ol type="a"> <!-- type : a로 시작 -->
+        <li>축구</li>
+        <li>농구</li>
+        <li>배구</li>
+    </ol>
+    <hr>
+
+
+    <p id="para"> 첫 번째 paragraph <br> <!-- id로 위치 지정 -->
+    <h3> 1부터 10까지의 총 합을 계산하는 C 프로그램 </h3>
+    <pre>
+    #include <stdio.h>
+    int main() {
+        int sum = 0, i;
+        for(i = 0; i <= 10; i++) {
+            sum += 1;
+        }
+        printf("1 ~ 10 총합 : %d", sum);
+        return 0;
+    }
+    </pre> <!-- pre : 사용자가 써놓은 그대로 가져옴 -->
+    </p>
+
+
+    <h1 title="페이지 제목" height="500"> 나의 첫 웹 페이지 작성 내용 </h1> 
+    <!-- h1 : 굵은 글씨 : 자동적으로 엔터가 들어가지는 테그 -->
+    <!--title은 적용되지만, height는 적용되지 않는다. -->
+    <h4> 기본 테그의 사용법 </h4> 
+
+    <!-- div : 라인 상에서 하나의 줄을 쓸 때 사용 -->
+    <div style="background-color:blue;"> HTML 아주 쉽네요. </div>
+    <div> 내가 좋아하는 색상은 <span style="background-color:red;"> 빨간색 </span> 입니다. </div>
+    <!-- p : 문단을 나눠주고 간격을 넓힘 -->
+    <p> style="background-color:blue;"> HTML 아주 쉽네요. </p> 
+    <p> 내가 좋아하는 색상은 <span style="background-color:red;"> 빨간색 </span> 입니다. </p>
+
+    첫 내용을 &nbsp; &nbsp; &nbsp;     뭘로 할까요? <br> <br> <!--&nbsp : 공백하나(들여쓰기)-->
+
+    두 번째 라인으로 왔네요. <br>
+    
+    엔터는 &lt;br&gt; 테그 입니다.
+    <hr> <!--div, hr, h 등은 block tag 입니다. -->
+    <img src="http://www.loremflickr.com/320/240" 
+    width="100" height="300"> <br> <!--img src : 이미지를 가져온다. [width : 길이 설정, height : 높이 설정] -->
+
+    <img id="pen" src="../images/penguins.jpg" alt="펭귄 이미지 영역"> <!--이미지를 못 가져올 경우(깨졌을 경우) alt를 쓰면 텍스트를 출력 -->
+    <!--시험!!!--> <!-- 절대 경로(X) "d:/" 쓰면 안됨 / 상대 경로(O) "." 써야함 -->
+
+    <br>
+    <a href="#top"> 맨 위로 가기</a>
+</body> 
+</html>
