@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Week4 Web Form </title>
+    <!-- url 경로 지정 [2가지 방법]-->
+    <link href="mystyle.css" rel="stylesheet"> <!-- 링크 이름이 틀리면 못 가져옴 -->
+
+    <style> 
+        @import url(mystyle.css);
+    </style>
+    <style>
+        fieldset {
+            margin: 20px;
+        }
+    </style> <!-- margin : 여백 -->
+
+    <!-- style은 head에서 작업! -->
+    <!-- <style> 
+        legend {
+            color: rgb(21, 66, 26);
+            background-color: rgb(161, 161, 249);
+            font-size: 25px;
+        } 
+        form {
+            background-color: aquamarine;
+        }
+        input {
+            background-color: yellow;
+        }
+        body {
+            background-color: yellowgreen;
+        }
+    </style> -->
+    <!-- legend : 태그만 스타일 지정 / form : 전체 스타일 지정--> 
+
+</head>
+<body>
+    <form id ="form" method="post" action="week2 (태그 사용).html"> <!-- action : week2가 나옴 / method [get : url에 포함되는 방식 / post : 내부적으로 숨겨져 있는 방식]--> 
+        <fieldset>
+            <legend> 기본 정보 </legend>
+            이름 : <input type="text" id="name" name="name"> <br> <!-- 변수명을 지정해줘야 맞춰서 들어감, 지정하지 않으면 ON만 들어감 -->
+            패스워드 : <input type="password" id="pw" name="ps"> <br>
+        </fieldset>
+        <fieldset> 
+            <legend style="font-size: 18px;"> 선택 정보 </legend>
+            <div> 거주지 </div>
+            <label><input type="radio" name="city" value="Seoul">서울</label> <!-- name이 있어야 그룹으로 묶어준다.-->
+            <label><input type="radio" name="city" value="Chunan">천안</label> <!-- label : 내용과 버튼을 묶어준다. -->
+            <label><input type="radio" name="city" value="Busan">부산</label>
+
+            <div> 성별 </div>
+            <input type="radio" name="gender" value="male">남성
+            <input type="radio" name="gender" value="female">여성
+
+            <div> 취미 </div>
+            <label><input type="checkbox" name="fav[]" value="j">조깅</label> <!-- checkbox : 한번 더 클릭하면 토글기능 때문에 체크가 해제됨 -->
+            <label><input type="checkbox" name="fav[]" value="h">헬스</label> <!-- 배열 형태로 만들어줘야 여러 개를 한꺼번에 받을 수 있다. -->
+            <label><input type="checkbox" name="fav[]" value="y">요가</label>
+            <label><input type="checkbox" name="fav[]" value="c">등산</label>
+        </fieldset>
+
+        <input type="submit" value="전송하기"> <!-- submit : 액션이 동작 / button, reset이 올 수 있다. -->
+    </form> 
+
+    <hr>
+    <form method="get" action="http://search.naver.com/search.naver">
+        검색어 : <input type="text" name="query"><br>
+        <input type="submit" value="검색하기">
+    </form>
+</body>
+</html>
