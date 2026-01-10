@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Advance 예제</title>
+    <style>
+        section {
+            position: relative; /* 상대 배치 (지정해준 값만큼 이동) */
+            background-color: aquamarine;
+            border: 2px solid yellow;
+        }
+        #sec1 {
+            height: 100px;
+            overflow: scroll;
+            /* overflow [hidden : 넘는 컨텐츠들은 보이지 않음, visible : 넘쳐도 컨텐츠들이 보임,
+                         scroll : 자동으로 스크롤이 생겨 컨텐츠를 볼 수 있음] */
+        }
+        #sec2 {
+            overflow: scroll;
+        }
+        div {
+            background-color: pink;
+            width: 200px; height: 150px;
+            border: 1px solid yellow;
+            margin: 10px;
+            display: inline-block; /* 패딩이나 마진 조절 가능 */
+        }
+        .dv1:hover {
+            position: relative; /* 상대 배치 (지정해준 값만큼 이동) */
+            left: 10px; top: 10px; /* <- 지정해준 값  */
+            /* 안쪽으로 들어가면 + , 바깥쪽으로 나가면 - / 원래있던 위치에 유지 [빈 공간을 그대로 둠] */
+        }
+        .dv2:hover{
+            position: absolute; /* 절대 배치 (브라우저의 크기가 변해도 태그 위치는 변화 X */
+            /* right: 210px; top: 10px; */
+            left: 20px; top: 30px;
+            /* 부모를 기준으로 위치 지정 */
+        }
+        /*
+        .dv3 {
+            position: fixed;
+            right: 10px; bottom: 10px;
+            /* 항상 고정 배치 - 다른 컨텐츠들을 가림 
+        }
+        .dv4 {
+            float: right;
+            /* 다른 컨텐츠들을 가리지 않음 
+        }
+        */
+    </style>
+    <style>
+        #sec2 div {
+            font-size: 50px;
+            font-weight: bolder;
+            color: red;
+            text-align: center;
+            width: 70px; height: 150px;
+        }
+        #sec2 .dv2 {
+            position: relative;
+            left: -70px; top: 30px;
+        }
+        #sec2 .dv3 {
+            position: relative;
+            left: -130px; top: 60px;
+        }
+        #sec2 .dv4 {
+            position: relative;
+            left: -190px; top: 90px;
+        }
+        #sec2 .dv5 {
+            position: relative;
+            left: -250px; top: 120px;
+        }
+        #sec2 div:hover {
+            z-index: 10;
+            /* z-index : 선택된게 맨 위로 올라옴 */
+        }
+        
+    </style>
+</head>
+<body>
+    <p style="width: 100px; height: 100px; overflow: scroll;">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat atque cupiditate, laboriosam quasi ratione accusantium in tenetur, eligendi placeat a ad distinctio, necessitatibus ex deleniti deserunt quam quas incidunt nostrum!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum laboriosam porro voluptatem nihil tenetur recusandae aut a dolore ullam vitae quibusdam autem itaque dolorem, rerum est, maxime magni id?
+    </p>
+    <!-- section#sec1>div.dv${contents1-$}*5 -->
+    <section id="sec1">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores facere deleniti magni excepturi repellendus, saepe, quos ratione delectus laudantium odit numquam nisi autem earum dolor, molestiae architecto alias? Eligendi, officiis?
+        <br>
+        <div class="dv1">contents1-1</div>
+        <div class="dv2">contents1-2</div>
+        <div class="dv3">contents1-3</div>
+        <div class="dv4">contents1-4</div>
+        <div class="dv5">contents1-5</div>
+    </section>
+
+    <!-- section#sec2>div.dv${$}*5 -->
+    <section id="sec2">
+        <div class="dv1">1</div>
+        <div class="dv2">2</div>
+        <div class="dv3">3</div>
+        <div class="dv4">4</div>
+        <div class="dv5">5</div>
+    </section>
+</body>
+</html>
