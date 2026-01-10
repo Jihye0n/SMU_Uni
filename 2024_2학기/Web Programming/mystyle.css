@@ -1,0 +1,14 @@
+legend {
+    color: rgb(21, 66, 26);
+    background-color: rgb(161, 161, 249);
+    font-size: 25px;
+} 
+form {
+    background-color: aquamarine;
+}
+input {
+    background-color: yellow;
+}
+body {
+    background-color: yellowgreen;
+}
