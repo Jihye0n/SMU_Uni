@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 객체 생성 예제</title>
+    <style>
+        table, tr, td, th {
+            border: 2px solid purple;
+            border-collapse: collapse;
+        }
+        td, th {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 생성자 함수 (특정한 개체를 만들어내는 함수)
+        /* 옛날 버전
+        function Student(a, b){} 
+        let k = new Student(10, 20);
+        */ 
+
+        // 최신 버전
+        class Student {
+            constructor(i, k, e, m) { // 생성자 함수
+                // 내부변수 생성   // this -> 내가 가지고 있는 변수
+                this.id = i;          
+                this.kor = k;
+                this.eng = e;
+                this.math = m;
+            } 
+
+            // 비효율 (메모리 차지 심함)
+            /*
+            sum = function(){
+                return (this.kor + this.eng + this.math) / 3;
+            }
+            */
+        }
+
+
+        // 합계 구하기
+        // 프로토타입 함수로 만들어줌 (sum이 1번만 만들어짐 : 참조) // 메모리 효율이 좋다.
+        Student.prototype.sum = function() {
+            return (this.kor + this.eng + this.math);
+        }
+
+
+        // 평균 구하기
+        Student.prototype.avg = function() {
+            return this.sum() / 3;
+        }
+
+
+        // toString : 문자열로 만들어줌
+        Student.prototype.toString = function() {
+            let str = "";
+            str += this.id + " ";
+            str += Math.ceil(this.kor) + " "; // Math.ceil : 소수점을 없앰
+            str += this.eng + " ";
+            str += this.math + " ";
+            str += this.avg() + "<hr>";
+            return str;
+        }
+
+        /*
+        let k = new Student(1, 97, 99, 87);
+        // k.kor => 97, k.id => 1
+        document.write(k.kor);
+        document.write("<br>");
+        document.write(k.sum());
+        */
+    </script>
+    <script>
+        // 30명 학생 배열에 생성
+        let classA = new Array();
+        for (i = 0; i < 30; i ++) {
+            let k = Math.random() * 30 + 70;
+            let e = Math.random() * 30 + 70;
+            let m = Math.random() * 30 + 70; 
+            let t = new Student(i + 1, k, e, m);
+            classA.push(t);
+        }
+
+        // 출력
+        /*
+        for(i = 0; i < classA.length; i++) {
+            document.write("<hr>");
+            document.write(classA[i]); // toString 함수 자동 호출
+        }
+        */
+
+        // new Object()로 사용자 객체 만들기 
+        /*
+        let account = new Object();
+        account.code = "111"
+
+        // 출력
+        document.write(account.code);
+        */
+
+        // 리스트
+        let list = [10, 7, 8, 4, 2, 9, 1]
+
+
+        // 평균 정렬 하기
+        // bad bubble : 조건식이 없음 / bubble 정렬 : (list.length - 1 - i) 조건식이 있음
+        for(i = 0; i < classA.length; i++) {
+            for(j = 0; j < classA.length - 1; j++) {
+                if(classA[j].avg() < classA[j + 1].avg()) { // > : 오름차순, < : 내림차순 // .avg() 부분을 .kor로 바꾸면 국어 성적 정렬
+                    t = classA[j];
+                    classA[j] = classA[j + 1];
+                    classA[j + 1] = t;
+                }
+            }
+        }
+
+        for(i = 0; i < list.length; i++) {
+            document.write(list[i] + " ");
+        }
+    </script>
+
+
+    <h2>우리 반 성적표</h2>
+    <table>
+        <tr>
+            <th>ID</th><th>국어</th>
+            <th>영어</th><th>수학</th>
+            <th>평균</th>
+        </tr>
+        <script>
+        // 출력
+        for(i = 0; i < classA.length; i ++) {
+            let st = "<tr><td>";
+            st += classA[i].id;
+            st += "</td><td>";
+            st += classA[i].kor;
+            st += "</td><td>";
+            st += classA[i].eng;
+            st += "</td><td>";
+            st += classA[i].math;
+            st += "</td><td>";
+            st += classA[i].avg();
+            st += "</td>";
+            st += "</tr>";
+            document.write(st);
+        }
+        </script>
+    </table>
+</body>
+</html>
