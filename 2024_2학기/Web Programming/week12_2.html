@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Element event</title>
+    <!-- 로그인 -->
+    <script>
+        // 아이디 부분 나갈때(onblur) 함수 
+        function checkID(o) {
+            let t = document.getElementById("inInfo");
+            if(o.value == "") { // 값이 비어있으면
+                t.innerHTML = "ID는 필수 요소 입니다.";
+                t.style.color = "red";
+                o.focus(); // focus 함수 : 강제로 ID칸에 포커스 (다음 칸에 못 넘어가게 함)
+            }
+            else // 값이 있을 경우ㄴㄴ
+                t.innerHTML = ""; // 빈 문자열 (아무것도 안보임)
+        }
+    </script>
+
+
+</head>
+<body>
+    <form method="get" action="week12_1.html"
+        onsubmit=""
+        onreset=""
+    > 
+        <!-- get : url에 보임 , postpone : url에 안보임 / action : 서버에 연결 -->
+        <!-- submit : 폼을 서버로 전송하는 기능 / reset : 초기화시키는 기능 (처음상태로) -->
+    
+
+        <!-- 로그인 폼 -->
+        <fieldset>
+            <legend>로그인</legend>
+            ID : 
+            <input type="text" 
+                onblur="checkID(this)"
+            ><span id="inInfo"></span><br> <!-- !! onblur : 빠져나갈 때 발생 !! / onfocus : 클릭할 때 -->
+            PASS : <input type="password"><span id="psInfo"></span><br>
+        </fieldset>
+
+
+
+        <!-- 간단 계산기 -->
+        <script>
+            function calc() {
+                let exp = document.getElementById("sik").value; // .value : sik객체안에 쓰여있는 문자열을 가져옴
+                let r = eval(exp); // eval : 계산기 역할
+                document.getElementById("result").value = r; // result객체안에 쓰여있는 문자열에 r을 대입
+            }
+        </script>
+
+        <fieldset>
+            <legend>Simple Caculator</legend>
+            <p>수식 : <input type="text" id="sik"> 
+                <input type="button" value="계산하기" onclick="calc()"></p>
+            <p>결과 : <input type="text" id="result"> </p>
+        </fieldset>
+
+
+
+        <!-- 라디오 버튼 : 어떤 거 선택했는지 콘솔에서 확인 가능 -->
+        <script>
+            function rCheck() { // 가져올게 없어서 빈칸
+                let rds = document.getElementsByName("food"); // naem이 food로 되어있는 것을 다 가져옴
+                for(i = 0; i < rds.length; i++) {
+                    if(rds[i].checked == true) {
+                        console.log(rds[i].value); // .value : 객체안에 값을 읽어옴
+                    }
+                }
+            }
+        </script>
+
+        <fieldset>
+            <legend>radio button</legend>
+            <label><input type="radio" name="food" value="korea">한식</label>
+            <label><input type="radio" name="food" value="china" checked>중식</label>
+            <label><input type="radio" name="food" value="일식">일식</label><br>
+            <input type="button" value="선택확인" onclick="rCheck()">
+        </fieldset>
+
+
+
+        <!-- 체크박스 : 선택된 물건 가격 계산 -->
+        <script>
+            let total = 0; // 전역변수
+            function comp(o) { // 객체가 하나 넘어온다.
+                let v = parseInt(o.value); // parseInt : 문자열을 정수 형태로 바꿔줘야함
+                if(o.checked == true) {
+                    total += v; // 토탈금액에 value를 더해줌
+                }
+                else
+                    total -= v;
+            
+                document.getElementById("total").value = total; // total객체 안에 total을 대입
+            }
+        </script>
+
+        <fieldset>
+            <legend>물품 가격 출력하기</legend>
+            <label><input type="checkbox" value="10000" name="prod[]" 
+                    onclick="comp(this)"
+                >모자(1만원)</label> <!-- array변수를 넣어줘야 함 -->
+            <label><input type="checkbox" value="50000" name="prod[]" 
+                    onclick="comp(this)"
+                >가방(5만원)</label> <!-- 그래야 차례대로 들어감 -->
+            <label><input type="checkbox" value="30000" name="prod[]"
+                    onclick="comp(this)"
+                >신발(3만원)</label>
+            <p>토탈 금액 : <input type="text" id="total" value="0"></p>
+        </fieldset>
+
+        
+
+        <!-- 배경 컬러 바꾸기 (onchange) -->
+        <input type="color" onchange="document.body.style.backgroundColor = this.value"> <!-- type="color" : 컬러값 선택창이 뜬다. -->
+
+
+
+        <!-- 이미지 선택하면 바꾸기 (onchange) -->
+        <script> 
+            function change(o) {
+                console.log(o.value);
+                console.log(o.selectedIndex); // 선택되어있는 인덱스(숫자)를 가져옴
+                // o.options[o.selectedIndex].value // option들을 세부적으로 가져올 수 있음
+                let i = o.value;
+                let img = document.getElementById("image");
+                img.src = i;
+                // img.width = "200px"; // 이미지 크기가 바뀌지 않음
+                img.setAttribute("width", "200px"); // setAttribute : 이미지 크기가 200px로 바뀜
+                
+                /*
+                let sel = document.getElementById("fruits");
+	            let img = document.getElementById("fruitimage");
+	            img.src = sel.options[sel.selectedIndex].value;
+                */
+            } 
+        </script>
+      
+        <fieldset>
+            <legend>Image Drawing</legend>
+            <!-- select>option*3 -->
+            <select name="" id="sel" onchange="change(this)">
+                <option value="images/Koala.jpg">코알라</option>
+                <option value="images/desert.jpg">사막</option>
+                <option value="images/Penguins.jpg">펭귄</option>
+            </select>
+            <img src="images/Koala.jpg" width="100" id="image">
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
+
