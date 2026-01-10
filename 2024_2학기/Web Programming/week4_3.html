@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        section {
+            height: 200px;
+            border: 5px solid red;
+        }
+
+        div {
+            width: 150px; height: 150px;
+            background-color: green;
+            margin: 10px; /* 여백 설정 : 박스의 맨 바깥 영역 (흰색 부분) */
+            /* padding: 10px 20px 30px 40px; // 콘텐츠를 직접 둘러싸고 있는 여백 */
+            background-image: url("image/desert.jpg"); 
+            background-size: 100px 100px;  
+            background-repeat:no-repeat; /* 사진 반복 설정 */
+            background-position:center center;
+            display: inline-block;
+            /* display[inline] : 엔터가 자동으로 안 들어감 - 사이즈 조절 안됨 [사이즈 조절하려면 inline-block 사용] */
+        }
+
+        .dv1 { border: 5px solid blue; 
+            border-radius: 20px 0px; /* 둥근 모서리 테두리 - (완전 동그랗게 나올려면 50px로 지정) */
+        }
+        .dv2 { border: 5px dashed brown; } /* 점선, 실선 약간 합친 느낌 (점선에 가까움) */
+        .dv3 { border: 15px ridge brown; }
+        .dv4 { border: 15px inset brown; }
+        .dv5 { border: 15px outset brown; }
+    </style>
+    <style>
+        .p1 {
+            text-shadow: 3px 3px red; /* 텍스트 그림자 (그림자 효과) */
+            box-shadow: 3px 3px blue; /* 박스 그림자 (그림자 효과) */
+        }
+        .p2 {
+            text-shadow: 3px 3px 3px red;
+            box-shadow: 0px 0px 5px violet;
+        }
+        .p3 {
+            text-shadow: 1px 1px 5px blue,
+            0px 0px 3px red; /* 블루와 레드가 섞인 색이 나옴 */
+            /* 여러개 넣으려면 ,(콤마) 사용 */
+            box-shadow: 3px 3px 5px violet;
+        }
+    </style>
+    <!-- solid : 실선, margin(top,right,bottom,left) : 외부 여백 , padding(top,right,bottom,left) : 내부 여백 -->
+    <!-- dotted : 점선, border-radius(left top, right top...[시계방향]) : 둥근 모서리 -->
+    <!-- background-repeat : 복사, background-position : 위치 지정 -->
+    <!-- text-shadow : 위치 지정을 해줘야 함 -->
+</head>
+<body>
+    <!-- section>div.dv${contents$}*5 -->
+    <section>
+        <div class="dv1">contents1</div>
+        <div class="dv2">contents2</div>
+        <div class="dv3">contents3</div>
+        <div class="dv4">contents4</div>
+        <div class="dv5">contents5</div>
+    </section>
+    <hr style="border: 3px solid lightgreen;">
+
+    <!-- lorem10 : 10단어 -->
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, in.</p>
+    <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, saepe!</p>
+    <p class="p3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, aperiam.</p>
+</body>
+</html>
