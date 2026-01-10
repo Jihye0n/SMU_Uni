@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example</title>
+    <style>
+        .hidden {
+            visibility: hidden; /* hidden : 숨겨진다. / visible : 눈에 보임 */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // window.onload : 코드 끝까지 동작된 뒤에 마지막에 동작함
+        // document.getElements ~ 으로 접근
+        window.onload = function() { // on : 이벤트처리 할 때 붙여줌
+            // 배경색 바꿈
+            document.body.style.backgroundColor = "lightgrey"; // document : 문서 자체 안에 있음
+
+
+            // p문단 가져와서 스타일 변경 and 문단 추가
+            let ps = document.getElementsByTagName("p"); // DOM 객체 // 복수 
+            ps[1].innerText = "<h1> Changed </h1>"; // innerHTML : 태그 취급 (Changed), innerText : 문자열 취급 (<h1> Changed </h1>)
+            ps[0].style.color = "yellow"; 
+            
+            // p문단 가져와서 스타일 변경 - 2
+            let oneP = document.getElementById("p"); // 단수 : 하나밖에 못 가져옴
+            oneP.style.border = "2px solid blue";
+
+
+            // 세션 모두 다 가져와서(태그 네임으로) 스타일 변경
+            let ss = document.getElementsByTagName("section"); // ss : 배열로 만들어짐
+            // jquery forEach, for in
+            for(i = 0; i < ss.length; i++) {
+                ss[i].style.border = "2px dotted green";
+                ss[i].style.margin = "10px 0px";
+                ss[i].style.width = "200px";
+                ss[i].style.display = "inline-block";
+            }
+
+
+            // 세션 모두를 가져오는데 (아이디)로 가져와서 스타일 변경
+            // 반복문을 통해서 단수여도 sec1, sec2, sec3 불러오기 가능
+            for (i = 1; i < 4; i++) {
+                str = "sec" + i;
+                let t = document.getElementById(str);
+                str = i*2 + "px solid red"; // 2배로 점점 커짐
+                t.style.border = str;
+            }
+
+
+            // dv2 숨기기 기능
+            // 클래스명 추가 (동적 부여)
+            // 클래스를 한꺼번에 여러개 가져올 수 있다.
+            let h = document.getElementsByClassName("dv2");
+            for(i = 0; i < h.length; i++) {
+                h[i].classList.add("hidden");
+                // h[i].classList.remove("hidden"); // 지울 때
+            }
+
+            // showHTML(); // 함수 호출
+
+
+            // Dom 객체 생성
+            // <div><img src="http://loremflickr.com/300/200/paris"></div>
+            let newItem = document.createElement("div");
+            newItem.innerHTML = '<img src="http://loremflickr.com/300/200/paris">';
+            let p = document.getElementById("p"); // 부모 객체를 가져옴
+            // Dom 객체 삽입, 삭제
+            p.appendChild(newItem); // appendChild : 원래 있던 내용 뒤에 붙음 (자식 요소를 끼어줌)
+            p.removeChild(newItem); // removeChild : 지울 때 
+        }
+
+
+        // mchange 함수
+        let mchange = function() { // sec1에 마우스 올리면 동작하는 함수
+            let ob = document.getElementsByClassName("dv1"); // getElementsByClassName : 섹션안에 dv1들
+            for(i = 0; i < ob.length; i++) {
+                ob[i].style.backgroundColor = "pink";
+            }
+
+
+            // 이미지 스타일 변경
+            let img = document.getElementById("image"); // 이미지 가져옴
+            img.src = "http://loremflickr.com/320/240/";
+            // img.width = "120px";
+            img.setAttribute("width", "120px"); // setAttribute : 속성 변경
+        }
+
+
+        // 알림창을 윈도우창에 띄우기
+        let win = null;
+        function showHTML() {
+            if(win == null || win.closed)
+                // [첫 번째 인자] : 뛰울 창 / [두 번째 인자] : 윈도우의 이름 / [세 번째 인자] : 옵션(크기 조절, 위치 조절 가능)
+                win = window.open("week11_notice.html", "outWin", "width=300, height = 200");
+
+            // 이전에 있던 거는 다 지움, 새로운 창으로 생성
+            /* 
+            win.document.open();
+            win.document.write("<h2>공지사항</h2>");
+            win.document.write("5주 후에 기말고사가 있어요.");
+            win.document.close();
+            */
+        }
+    </script>
+
+    <p id="p">내부 내용 입니다.</p>
+    <P id="p2">두 번째 내용 입니다.</P>
+    <hr>
+
+    <!-- (section#sec$>div.dv${div$-$}*3)*3 -->
+    <section id="sec1" onmouseover="mchange()"> <!-- onmouseover : 섹션(sec1)부분에 마우스가 올라갔을때 mchange() 함수 호출 -->
+        <div class="dv1">div1-1</div>
+        <div class="dv2 hidden">div2-2</div> <!-- 클래스명 두개 지정 가능 (정적 부여) -->
+        <div class="dv3">div3-3</div>
+    </section>
+    <section id="sec2">
+        <div class="dv1">div1-1</div>
+        <div class="dv2">div2-2</div>
+        <div class="dv3">div3-3</div>
+    </section>
+    <section id="sec3">
+        <div class="dv1">div1-1</div>
+        <div class="dv2">div2-2</div>
+        <div class="dv3">div3-3</div>
+    </section>
+    <hr>
+
+    <img id="image" src="http://loremflickr.com/320/240/dog" width="320">
+
+    <hr>
+    <a href="http://www.naver.com" target="outWin">네이버</a>
+</body>
+</html>
