@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Start</title>
+    <script>
+        document.write("hello ");
+    </script>
+</head>
+<body>
+    <!-- <img src="http://loremflickr.com/320/240"><br> -->
+    <script>
+        // 이미지 출력
+        document.write('<img src="http://loremflickr.com/320/240"><br>') // "" -> 문자열 처리 (안쪽에 " " 쓰면 바깥쪽에는 ' ' 쓰기)
+
+
+        // 다이얼로그 출력
+        alert("hello javascript!!");
+        // 콘솔 출력 - 로그 확인(화면에 출력X, F12 -> 콘솔에 출력)
+        console.log("이건 어디에 출력하는 걸까요?");
+
+        // javascript 입력
+        /* 변수 지정 : let <자동으로 인식>
+        int a = 10; -> C
+        let a = 10; -> javascript
+        var b = "hello"; -> javascript
+        */
+        
+
+        // 다이얼로그 출력 (확인:true, 취소:false 입력 가능)
+        let ret = confirm("확인하셨습니까?");
+        // 취소를 누르면 null값이 들어감 ex) if (ret == NULL) {취소값}, else if (ret == "") {입력 없이 확인만 누른 경우}, else{}
+        document.write(ret);
+        document.write("<hr>");
+        
+
+        // 다이얼로그 출력 (숫자 입력 가능, 뒤에 숫자 넣으면 기본값으로 지정됨)
+        let num = prompt("숫자 입력"); 
+        // ** 입력은 무조건 문자열로 입력 됨 ! 숫자로 쓰려면 숫자로 바꿔줘야 함 !
+        document.write("<hr>");
+        document.write(num + 200); // "100" + 200 => "100200"
+
+        let r = parseInt(num) + 200; // 문자열을 int로 바꿔주는 함수 // "100" -> 100
+        document.write("<br>" + r + "<hr>");
+    </script>
+
+
+    <script>
+        // 다이얼로그 출력 (숫자 입력 가능)
+        let score = parseInt(prompt("점수")); // int로 바로 바꿔줌
+        let grade = "F"; // 데이터를 넣고 시작하는게 좋다.
+
+        switch ( Math.floor(score/10) ) { // Math.floor() 버림 연산 정수화
+        case 10:
+        case 9:
+            grade = "A";
+            break;
+        case 8: 
+            grade = "B";
+            break;
+        case 7: 
+            grade = "C";
+            break;
+        default: // 이미 위에서 grade에 F를 넣었기 때문에 있어도 되고 없어도 된다.
+            grade = "F";
+        }
+        
+        /*
+        if (score >= 90) {
+            grade = "A";
+        }
+        else if (score >= 80) {
+            grade = "B";
+        }
+        else if (score >= 70) {
+            grade = "C";
+        }
+        /*
+        else { // 조건 사용X, 단독 사용X
+            grade = "F"; 
+        }
+        */
+
+        document.write("당신의 등급은 <h1>" + grade + "</h1>입니다. <br>");
+    </script>
+</body>
+</html>
