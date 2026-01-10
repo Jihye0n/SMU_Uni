@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Object</title>
+    <script src="JS/myfuntion.js"></script>
+</head>
+<body>
+    <!-- 시간 가져오기 -->
+    <h2>Date()</h2>
+    <script>
+        let today = new Date(); // new Date() : 현재 시스템의 시간을 가져옴 [클래스]
+        // Date()클래스 안에 있는 메소드들 사용
+        let y = today.getFullYear(); // 년
+        let m = today.getMonth(); // 월
+        let d = today.getDay(); // 일
+        document.write(y + "년, " + m + "월 " + d + "일<br>");
+
+
+        // 초에 맞춰서 배경 색깔 바뀜
+        let s = today.getSeconds(); // 초를 가져옴
+        if ( s % 2 == 0 ) { // 짝수 초 일 경우
+            document.body.style.backgroundColor = "green"; // body : DOM 객체
+        }
+        else
+            document.body.style.backgroundColor = "yellow";
+    </script> 
+
+
+    <!-- 문자열 만들기 -->
+    <h2>String()</h2>
+    <script>
+        let str = new String("hello"); // 문자열형으로 만들어진다. [클래스]
+        let str2 = "hello"; // 위에 코드랑 같다.
+        document.write("str length : " + str.length + "<br>");
+        document.write("str length : " + str2.length + "<br>");
+    </script>
+
+
+    <h2>Math</h2> 
+    <script>
+        // let m = new Math(); // X (인스턴스를 생성하는 객체가 아님)
+        /*
+        Math.cos(); // 코사인
+        Math.floor(); // 내림 (버림)
+        Math.ceil(); // 올림 
+        Math.round(); // 반올림 
+        Math.PI(); // 원주율
+        Math.sqrt(); // 제곱근
+        */
+
+        // 로또 번호 추첨 [ 1 ~ 45 까지 숫자 6개]
+        let score = Math.random(); // 0 ~ 1 사이의 랜덤수
+        for (i = 0; i < 6; i++) {
+            let n = Math.floor(Math.random() * 44 + 1); // [Math.random() * 숫자 둘의 차이 + 시작 숫자] // 버림 연산
+            document.write(" " + n);
+        }
+    </script>
+
+
+    <h2>Array()</h2>
+    <script>
+        let a = new Array(); // 배열이 만들어짐 // 타입 마음대로 가능 ! 꼭 정해진 타입이 있는 것은 아님 !
+        // 비워져있는 배열은 undefined로 채워짐
+        a[0] = 100;
+        a[2] = 200;
+        a[4] = "HELLO";
+        a[10] = "Out of Index"; // 자동으로 10까지 배열생성 해줌
+
+        a.push("Last Element"); // 밀어넣는 함수 --> 하나씩 추가할때 사용 [자료구조의 push와 비슷]
+        a.push("<img src = 'image/Penguins.jpg' width=100>"); // 배열에 사진넣기 가능
+
+
+        // 함수 불러와서 대입
+        a[1] = adder; 
+
+
+        // 'a[i] ='' 으로 만들기
+        for (i = 0; i < a.length; i++) { // a.length : 알아서 숫자길이를 카운터 [배열 크기만큼 루프]
+            document.write("a[i] = " + a[i] + "<br>");
+        }
+        
+
+        // JS파일의 함수 사용
+        document.write(" a + b = " + a[1](10,20));
+    </script>
+</body>
+</html>
