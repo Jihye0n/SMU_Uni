@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funtion Test</title>
+    <script src="JS/myfuntion.js"> // 함수 경로 지정 [JS파일안에 있다.] 
+    </script>
+    <script> // 다른 함수가 필요하면 스크립트를 따로 다시 만들어서 적용
+
+    </script>
+</head>
+<body>
+    <h1>사칙 연산</h1>
+    <script> // 함수 사용
+        let i = 10, j = 20;
+        let r = adder(i, j); // 함수 호출
+        document.write(i + " + " + j + " = " + r + "<br>");
+        document.write(i + " - " + j + " = " + subtractor(i, j) + "<br>");
+        document.write(i + " X " + j + " = " + multiplier(i, j) + "<br>");
+        document.write(i + " / " + j + " = " + divider(i, j) + "<br>");
+
+
+        // 다이얼로그 출력
+        let k = prompt("정수 입력", 7); // 기본값이 7
+        gugudan(k);
+    </script>
+</body>
+</html>
