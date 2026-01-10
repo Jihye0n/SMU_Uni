@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 회원가입 페이지 [과제]</title>
+</head>
+<body>
+    <h3 style="color: green;">NAVER</h3>
+    <form>
+        <fieldset> <!-- fieldset : 폼요소들 그룹핑(테두리 생성) -->
+            <input type="text" placeholder="아이디"> @naver.com <br> <!-- placeholder : 힌트 -->
+            <input type="password" placeholder="비밀번호"><br>
+            <input type="email" placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)"><br>
+        </fieldset>
+        <fieldset>
+            <input type="text" placeholder="이름"><br>
+            <input type="data" value="" placeholder="생년월일 8자리"><br>
+            <input type="radio" name="성별" value="1">남자
+            <input type="radio" name="성별" value="2">여자
+            <input type="radio" name="성별" value="3">선택안함
+            <hr>
+            <select name="countries">
+                <option value="1" selected>대한민국 +82</option>
+                <option value="2">일본 +81</option>
+                <option value="3">중국 +86</option>
+            </select>
+            <br>
+            <input type="tel" placeholder="휴대전화번호">
+        </fieldset>
+
+        <input type="submit" value="인증요청" style="background-color: green; color: white;">
+
+    </form>
+</body>
+</html>
