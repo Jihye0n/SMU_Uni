@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript First</title> <!-- script는 아무대나 들어가도 됨 (head O, body O)-->
+    <script>
+        document.write("hello javascript <br>");
+    </script>
+</head>
+<body>
+    <!-- 글자, 이미지 출력 -->
+    <script>
+        document.write("hello javascript");
+        document.write("<hr>");
+        document.write("<img src='http://loremflickr.com/200/200/dog' width=200>");
+        // "<img src='image.jpg' width=200>" // 큰 따옴표, 작은 따옴표로 구분
+    </script>
+    <hr>
+
+    
+    <!-- 클릭 시 이미지 변경 -->
+    <img src="http://loremflickr.com/200/200/cat"
+        onclick="this.src = 'http://loremflickr.com/200/200/dog'" 
+    > 
+    <!-- onmouseover : 마우스가 올라갔을때 바뀜 / this : 자기자신 (이미지를 지칭) -->
+    <!-- onclick : 클릭하면 바뀜 -->
+
+
+    <!-- 클릭 시 색깔 변경 -->
+    <div style="color:red;"
+        onclick="this.style='color:pink;'"
+    >나 클릭해줘요.</div>
+    <!-- this : 자기자신 (div를 지칭) -->
+</body>
+</html>
