@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Example</title>
+    <!-- 리스트 스타일 -->
+    <style>
+        section {
+            border: 2px solid green;
+            padding: 5px;
+            margin: 100px 0px;
+        }
+        li {
+            display: inline-block;
+            width: 100px;
+            height: 70px;
+            border: 1px solid;
+            margin: 10px 10px;
+        }
+    </style>
+
+
+    <!-- 리스트 색 변경 기능 -->
+    <script>
+        let timer2 = null;
+        let index = 0;
+        let pIndex = 0;
+        window.onload = function() {
+            let lis = document.getElementsByTagName("li");
+            pIndex = lis.length - 1;
+            timer2 = setInterval(function(){ // setInterval(펑션, 밀리단위 시간) : 타이머가 계속 만들어지는 함수 (반복)
+                lis[pIndex].style.background = "white" // 화이트로 변경
+                
+                // 랜덤 컬러 생성
+                let r = Math.floor(Math.random() * 255);
+                let g = Math.floor(Math.random() * 255);
+                let b = Math.floor(Math.random() * 255);
+                
+                // let str = "rgb(255, 0, 0)";
+                let str = "rgb(" + r + ", " + g + ", " + b + ")";
+
+                lis[index].style.background = str;
+                pIndex = index; // 이전 인덱스로 따라간다.
+                index++; // 그다음 인덱스로 넘어간다.
+                index = index % lis.length;
+            }, 400); // setInterval(펑션, 밀리단위 시간) : 타이머가 계속 만들어지는 함수 (반복) / 2000 : 2초
+
+        }
+    </script>
+</head>
+<body>
+    <!-- 타이머 기능 -->
+    <h2>setTimeout Ex</h2>
+
+    <!-- '네이버로 이동하기' 에 마우스를 대고 있으면 이동 -->
+    <script>
+        let timer = null;
+        // 마우스 over
+        function setTime() {
+            timer = setTimeout(function(){
+                location.href =  "http://www.naver.com" // location.href : 현재 주소
+            }, 2000); // setTimeout(함수, 몇 초 후에 전달할 것 인지 [밀리단위 시간]) : 타이머가 1번 만들어지는 함수 / 2000 : 2초 
+        }
+
+        // 마우스 out // setTime(), clearTimeout() 한 세트임
+        function releaseTime() {
+            if(timer != null)
+                clearTimeout(timer); // ! clearTimeout(지울 타이머) : 타이머 지우는 함수
+
+        }
+    </script>
+    
+    <!-- '네이버로 이동하기' 에 마우스를 대고 있으면 이동 -->
+    <div 
+        onmouseover="setTime()"
+        onmouseout="releaseTime()"
+    >네이버로 이동하기</div>
+    <hr>
+
+
+
+    <!-- 타이머 정지하기 버튼 -->
+    <script>
+        function stop() {
+            if(timer2 != null)
+                clearInterval(timer2); // setInterval()의 타이머 정지
+        }
+    </script>
+    <input type="button" value="타이머 정지하기" onclick="stop()"><br>
+
+
+
+    <!-- 리스트 색 변경 -->
+    <section id="sec">
+        <!-- li#li$*4 -->
+        <li id="li1">List Item 1</li>
+        <li id="li2">List Item 2</li>
+        <li id="li3">List Item 3</li>
+        <li id="li4">List Item 4</li>
+    </section>
+
+
+
+    <!-- submenu -->
+    <div id="submenu" style="visibility: visible;"> <!-- visibility: hidden : 숨겨짐 -->
+        <li>link1</li>
+        <li>link2</li>
+        <li>link3</li>
+    </div>
+
+</body>
+</html>
+
