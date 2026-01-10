@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 스타일 selector example </select></title>
+
+    <!-- 폰트 쓰기 [웹사이트 : https://fonts.google.com] -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+    <style> 
+        section {
+            border: 2px solid blue; 
+            margin-bottom: 20px;
+            background-color: aqua;
+        } 
+        #sec2 {
+            background-color: brown;
+        }
+        .list1 { /* 클래스 */
+            color: yellow;
+            font-size: 20px;
+            text-align: center;
+        }
+        li {
+            text-align: center; /* text_align : 정렬 */
+        }
+        #sec3 .list3 { /* 자손 개념 */
+            color: red;
+        }
+        .vip {
+            font-size: 25px;
+            color: gold;
+            background-color: red;
+        }
+
+        li:hover {
+            background-color: white;
+            font-size: 20px;
+        }
+        li:nth-child(3n+1) {
+            background-color: pink;
+        }
+        div{
+            color: white;
+        }
+        div:first-letter { /* 첫 번째 글자 변경 */
+            font-size: 30px;
+            color: red;
+        }
+        #in:focus { /* 텍스트 입력칸에 선택이 되었을 때 (아이디가 in 이다.) */
+            background-color: red;
+            color: blue;
+            border: 4px dotted green;
+        }
+        a:visited { /* 방문하고 나서의 링크 스타일 적용 */
+            color: black;
+        }
+        a:active { /* 마우스로 누르고 있는 상황에서 스타일 적용 */
+            color: black;
+        }
+        a:hover {
+            text-decoration: underline; /* 텍스트에 밑줄 긋기 */
+        }
+    </style> 
+    <style>
+        .myfont {
+            font-family: "Gamja Flower", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <!-- solid : 실선 / #~ : id selecotr / .~ : class selecotr -->
+    <!-- > : 자식 / (공백) : 자손 -->
+    <!-- hover : 마우스를 올릴 때 스타일 지정 / nth-child() : 짝수(odd),홀수(even) 선택, 식쓰기 가능 / 
+        first-letter : 첫 번째에 대해서만 스타일 지정 / focus : 입력할 때 스타일 지정 -->
+</head>
+<body>
+    <a class="myfont" href="http://www.naver.com">네이버</a> <!-- a : 하이퍼링크 -->
+    <hr>
+
+    텍스트 입력 : <input type="text" id="in"> <br>
+    <div>
+        Rorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, veniam similique, sed accusamus illo provident natus a temporibus, voluptatibus tempora dolore cum magni inventore nobis placeat eos voluptates harum deserunt.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic officiis aliquam nihil, non blanditiis incidunt! Tenetur rem sapiente illum cumque corrupti excepturi sequi odio placeat, perferendis, maxime beatae voluptatibus nobis?
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque beatae sapiente incidunt? Inventore iste aperiam, assumenda culpa totam rem, modi deserunt harum repellat necessitatibus soluta. Autem fuga quis pariatur!
+    </div>
+    <hr>
+
+    <!-- # : id 개념 / . : class 개념 / $ : 숫자 -->
+    <section id="sec1">
+        <li class="list1">내부 내용 1-1</li>
+        <li class="list2 myfont">내부 내용 1-2</li>
+        <li class="list3">내부 내용 1-3</li>
+        <li class="list4">내부 내용 1-4</li>
+    </section>
+    <section id="sec2">
+        <li class="list1">내부 내용 2-1</li>
+        <li class="list2">내부 내용 2-2</li>
+        <li class="list3">내부 내용 2-3</li>
+        <li class="list4">내부 내용 2-4</li>
+    </section>
+    <section id="sec3">
+        <li class="list1">내부 내용 3-1</li>
+        <li class="list2">내부 내용 3-2</li>
+        <li class="list3">내부 내용 3-3</li>
+        <li class="list4 vip">내부 내용 3-4</li>
+    </section> 
+</body>
+</html>
