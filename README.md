@@ -1,7 +1,7 @@
 # 🎓 SMU_Uni (2023 - 2025)
 <br>
 
-### 🗓️ 2023년 1학기
+### 🗓️ [2023년 1학기](./2023_1학기)
 - 💻 **[C Programming (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2023_1학기/C%20programming)**
 - 🐍 **[Python](https://github.com/Jihye0n/SMU_Uni/tree/main/2023_1학기/Python)**
 - 🐧 **리눅스관리**
