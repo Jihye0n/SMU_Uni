@@ -2,7 +2,7 @@
 <br>
 
 ### 🗓️ [2023년 1학기](./2023_1학기)
-- 💻 **[C Programming (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2023_1학기/C%20programming)**
+- 💻 **[C Programming](https://github.com/Jihye0n/SMU_Uni/tree/main/2023_1학기/C%20programming)**
 - 🐍 **[Python](https://github.com/Jihye0n/SMU_Uni/tree/main/2023_1학기/Python)**
 - 🐧 **리눅스관리**
 - 📘 **정보공학개론**
@@ -12,7 +12,7 @@
 
 ### 🗓️ [2024년 1학기](./2024_1학기)
 - ⚡ **논리회로**
-- 📱 **[모바일프로그래밍 (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/mobile%20programming)**
+- 📱 **[모바일프로그래밍](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/mobile%20programming)**
 - 🔐 **[보안알고리즘](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/보안알고리즘)**
 - 🖼️ **[영상처리개론](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/영상처리개론)**
 - 🌳 **[자료구조 (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/자료구조)**
@@ -23,8 +23,8 @@
 - 🤖 **[AI응용보안](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/AI응용보안)**
 - 🔎 **Digital forensics**
 - 🌐 **[Web Programming](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/Web%20Programming)**
-- ☕ **[객체지향프로그래밍 (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/JAVA)**
-- 🛡️ **[네트워크보안 (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/네트워크보안)**
+- ☕ **[객체지향프로그래밍](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/JAVA)**
+- 🛡️ **[네트워크보안](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/네트워크보안)**
 - 🔋 **전기전자공학**
 
 <br>
