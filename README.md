@@ -23,7 +23,7 @@
 - 🤖 **[AI응용보안](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/AI응용보안)**
 - 🔎 **Digital forensics**
 - 🌐 **[Web Programming](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/Web%20Programming)**
-- ☕ **[객체지향프로그래밍](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/JAVA)**
+- ☕ **[Java Programming](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/JAVA)**
 - 🛡️ **[네트워크보안](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/네트워크보안)**
 - 🔋 **전기전자공학**
 
