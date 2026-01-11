@@ -2,7 +2,7 @@
 <br>
 
 ### 🗓️ 2023년 1학기
-- 💻 **C Programming (PBL)**
+- 💻 **[C Programming (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2023_1학기/C%20programming)**
 - 🐍 **Python**
 - 🐧 **리눅스관리**
 - 📘 **정보공학개론**
