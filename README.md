@@ -30,10 +30,10 @@
 <br>
 
 ### 🗓️ 2025년 1학기
-- 🗄️ **데이터베이스 실습**
-- 🧠 **머신러닝과 정보보호**
-- 🔏 **보안프로토콜**
-- 🕸️ **인터넷응용보안**
+- 🗄️ **[데이터베이스 실습](https://github.com/Jihye0n/SMU_Uni/tree/main/2025_1학기/Database)**
+- 🧠 **[머신러닝과 정보보호](https://github.com/Jihye0n/SMU_Uni/tree/main/2025_1학기/머신러닝과%20정보보호)**
+- 🔏 **[보안프로토콜](https://github.com/Jihye0n/SMU_Uni/tree/main/2025_1학기/보안프로토콜)**
+- 🕸️ **[인터넷응용보안](https://github.com/Jihye0n/SMU_Uni/tree/main/2025_1학기/인터넷응용보안)**
 - 🚀 **캡스톤디자인 1**
 
 <br>
