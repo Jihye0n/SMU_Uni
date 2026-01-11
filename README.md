@@ -12,7 +12,7 @@
 
 ### 🗓️ 2024년 1학기
 - ⚡ **논리회로**
-- 📱 **[모바일프로그래밍 (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/mobile programming)**
+- 📱 **[모바일프로그래밍 (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/mobile%20programming)**
 - 🔐 **[보안알고리즘](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/보안알고리즘)**
 - 🖼️ **[영상처리개론](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/영상처리개론)**
 - 🌳 **[자료구조 (PBL)](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_1학기/자료구조)**
