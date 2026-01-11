@@ -22,8 +22,8 @@
 ### 🗓️ [2024년 2학기](./2024_2학기)
 - 🤖 **[AI응용보안](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/AI응용보안)**
 - 🔎 **Digital forensics**
-- 🌐 **[Web Programming](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/Web%20Programming)**
 - ☕ **[Java Programming](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/JAVA)**
+- 🌐 **[Web Programming](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/Web%20Programming)**
 - 🛡️ **[네트워크보안](https://github.com/Jihye0n/SMU_Uni/tree/main/2024_2학기/네트워크보안)**
 - 🔋 **전기전자공학**
 
