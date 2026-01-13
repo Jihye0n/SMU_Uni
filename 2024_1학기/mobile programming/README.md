@@ -1,18 +1,18 @@
-# mobile programming 소스코드
+# mobile programming Codes
 
-**2023년 2학기 모바일프로그래밍** 수업의 실습 및 과제 저장소입니다.
+**2024년 1학기 모바일프로그래밍** 수업의 실습 및 과제 저장소입니다.
 <br>
 
 ## 📂 Source Code Index
 
-| 폴더명 | 주제 | 주요 학습 내용 |
-|:---:|:---|:---|
-| **Step_01** | **안드로이드 기초** | 개발 환경 구축(Android Studio), 에뮬레이터 설정 및 프로젝트 구조 이해 |
-| **Step_02** | **위젯과 레이아웃** | TextView, Button, EditText 활용 및 LinearLayout/ConstraintLayout 배치 |
-| **Step_03** | **이벤트 처리** | 클릭 리스너(OnClickListener) 및 토스트(Toast) 메시지 출력 실습 |
-| **Step_04** | **액티비티와 인텐트** | Activity 생명주기(Lifecycle) 및 Intent를 이용한 화면 전환과 데이터 전달 |
-| **Step_05** | **리스트뷰와 어댑터** | ListView/RecyclerView 구현 및 커스텀 어댑터를 이용한 목록 제어 |
-| **Step_06** | **데이터 보관** | SQLite 데이터베이스 및 SharedPreference를 이용한 로컬 데이터 저장 |
-| **Final_Project** | **종합 앱 개발** | 지도 API 또는 공공데이터를 활용한 종합 모바일 애플리케이션 구현 |
-
-<br>
+| 폴더 (주차) | 파일명 | 주제 | 설명 |
+|:---:|:---|:---|:---|
+| **week_02** | `01.py` | **기초 문법** | 변수 선언 및 기본 자료형 실습 |
+| | `02.py` | **입출력** | input 함수를 이용한 데이터 입력 및 출력 |
+| **week_05** | `01.py` | **조건문** | if-else 문을 활용한 상황별 로직 처리 |
+| | `02.py` | **반복문** | for, while 문을 이용한 데이터 순회 |
+| **week_09** | `list.py` | **리스트 활용** | 리스트 생성, 수정 및 슬라이싱 기법 |
+| | `dict.py` | **딕셔너리** | Key-Value 구조를 이용한 데이터 관리 |
+| **week_12** | `func.py` | **함수(Function)** | 사용자 정의 함수 및 매개변수 활용 |
+| | `module.py` | **외장 모듈** | math, random 등 표준 라이브러리 실습 |
+| **Midterm** | `exam.py` | **중간고사** | 한 학기 기초 내용을 포함한 종합 과제 |
